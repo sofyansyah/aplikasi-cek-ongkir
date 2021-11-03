@@ -121,7 +121,7 @@ export default {
 
        onMounted(() => {
 
-        axios.get('https://aplikasi-cek-ongkir.wesdadi.com/api/provinsi').then(response => {
+        axios.get('https://cek-ongkir.wesdadi.com/api/provinsi').then(response => {
           provinsi.value = response.data.data
         })
         .catch(error => {
@@ -135,7 +135,7 @@ export default {
        */
        function getKotaAsal() {
 
-        axios.get(`https://aplikasi-cek-ongkir.wesdadi.com/api/kota/${state.provinsi_asal}`).then(response => {
+        axios.get(`https://cek-ongkir.wesdadi.com/api/kota/${state.provinsi_asal}`).then(response => {
           kota_asal.value = response.data.data
         })
         .catch(error => {
@@ -149,7 +149,7 @@ export default {
        */
        function getKotaTujuan() {
 
-        axios.get(`https://aplikasi-cek-ongkir.wesdadi.com/api/kota/${state.provinsi_tujuan}`).then(response => {
+        axios.get(`https://cek-ongkir.wesdadi.com/api/kota/${state.provinsi_tujuan}`).then(response => {
           kota_tujuan.value = response.data.data
         })
         .catch(error => {
@@ -163,7 +163,7 @@ export default {
        */
        function getOngkir() {
 
-        axios.post('https://aplikasi-cek-ongkir.wesdadi.com/api/cek-ongkir/', {
+        axios.post('https://cek-ongkir.wesdadi.com/api/cek-ongkir/', {
 
           //send data ke server laravel
           asal: state.kota_asal,
